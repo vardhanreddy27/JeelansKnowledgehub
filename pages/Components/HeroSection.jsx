@@ -39,7 +39,7 @@ const studentAvatars = [
 const featureCards = [
   {
     title: "IIT Foundation",
-    image: "/iit-foundation.png",
+    image: "/iit.png",
     href: "#iit",
   },
   {
@@ -65,7 +65,7 @@ export default function HeroSection() {
       <div className="relative z-10 flex min-h-screen flex-col px-5 pb-14 pt-10 md:px-10 lg:px-16 lg:pt-14">
         <div className="grid flex-1 items-center gap-10 lg:grid-cols-[1fr_0.95fr]">
           {/* LEFT CONTENT */}
-          <div className="max-w-175">
+          <div className="">
             <div className="mb-8 inline-flex items-center gap-3 rounded-full bg-white/15 px-5 py-3 text-sm font-bold text-[#ffe082] backdrop-blur-md">
               <span className="relative flex h-3 w-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ffb21a] opacity-75" />
@@ -164,7 +164,7 @@ export default function HeroSection() {
 
       {/* PROGRAM IMAGE CARDS - SAME COMPONENT */}
       <div className="relative z-20 px-4 pb-20 sm:px-6 lg:px-10">
-        <div className="mx-auto max-w-375 rounded-[34px] p-3">
+        <div className="mx-auto  rounded-[34px] p-3">
           <div className="grid gap-5 md:grid-cols-3">
             {featureCards.map((card) => (
               <Link

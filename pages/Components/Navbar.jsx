@@ -4,12 +4,12 @@ import Link from "next/link";
 import { FaBars, FaTimes, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 const navItems = [
-  { name: "NEET", href: "#skills-knowledge", badge: "New Batch" },
-  { name: "IIT", href: "#skills-knowledge", badge: "New Batch" },
-  { name: "Navodaya Coaching", href: "#skills-knowledge" },
-  { name: "Sainik Schools Entrance", href: "#skills-knowledge" },
-  { name: "RMS Entrance", href: "#skills-knowledge" },
-  { name: "Home Tuitions", href: "#skills-knowledge" },
+  { name: "NEET", href: "#choose-program", badge: "New Batch" },
+  { name: "IIT", href: "#choose-program", badge: "New Batch" },
+  { name: "Navodaya Coaching", href: "#choose-program" },
+  { name: "Sainik Schools Entrance", href: "#choose-program" },
+  { name: "RMS Entrance", href: "#choose-program" },
+  { name: "Home Tuitions", href: "#choose-program" },
 ];
 
 const phoneNumber = "919999999999"; // replace with your number

@@ -19,11 +19,12 @@ const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
 )}`;
 
 const packages = [
-     {
+  {
     title: "Advanced Learning",
     tag: "Classes 1 to 5",
     icon: FaCalculator,
     color: "bg-[#ffb21a]",
+    image:"https://www.shutterstock.com/shutterstock/videos/1092019115/thumb/1.jpg?ip=x480",
     features: [
       "Basic Maths improvement",
       "Addition, subtraction, tables",
@@ -38,6 +39,7 @@ const packages = [
     tag: "Classes 6 to 12",
     icon: FaBookOpen,
     color: "bg-[#1f67a8]",
+    image:"https://images.shiksha.com/mediadata/images/articles/1682688256phpUghaiy.jpeg",
     features: [
       "Maths & Science foundation",
       "Concept clarity from basics",
@@ -52,6 +54,8 @@ const packages = [
     tag: "Medical Entrance",
     icon: FaFlask,
     color: "bg-[#123c62]",
+    image:
+      "https://media.istockphoto.com/id/2163915959/photo/indian-asian-young-doctors-or-medical-professionals-isolated-or-in-office-hospital.jpg?s=612x612&w=0&k=20&c=Ew-pDn43ubKoHYwUn5p2x2ElZRCX3N1elPGRMNSc1qU=",
     features: [
       "Biology, Physics & Chemistry",
       "Chapter-wise preparation",
@@ -62,12 +66,12 @@ const packages = [
     price: "Contact us",
     highlight: true,
   },
- 
   {
     title: "Home Tuitions",
     tag: "Personal Coaching",
     icon: FaHome,
     color: "bg-[#2c84c4]",
+    image:"https://content3.jdmagicbox.com/v2/comp/jaipur/u6/0141px141.x141.230210093520.v1u6/catalogue/click-home-tuition-ramnagar-extension-jaipur-home-tutors-m89qrezwp9.jpg",
     features: [
       "One-to-one attention",
       "School syllabus support",
@@ -81,29 +85,26 @@ const packages = [
 
 export default function PackagesSection() {
   return (
-    <section className="relative overflow-hidden bg-[#f7fbff] px-4 md:px-8 pb-5 pt-5">
-      {/* Background Shapes */}
+    <section className="relative overflow-hidden bg-[#f7fbff] px-4 pb-5 pt-5 md:px-8">
       <div className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-[#ffb21a]/15 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 top-20 h-80 w-80 rounded-full bg-[#1f67a8]/10 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl">
-        {/* Heading */}
-        <div className="mb-14 text-center">
-          <p className="mx-auto  inline-flex rounded-full bg-[#eaf4ff] px-5 py-2 text-xs font-extrabold uppercase tracking-[0.22em] text-[#1f67a8]">
+      <div className="relative mx-auto">
+        <div id="choose-program" className="mb-14 scroll-mt-28 text-center">
+          <p className="mx-auto inline-flex rounded-full bg-[#eaf4ff] px-5 py-2 text-xs font-extrabold uppercase tracking-[0.22em] text-[#1f67a8]">
             Choose Program
           </p>
 
-          <h2 className="mx-auto  text-[38px] font-extrabold   text-[#123c62] md:text-[56px] lg:text-[68px]">
+          <h2 className="mx-auto text-[38px] font-extrabold text-[#123c62] md:text-[56px] lg:text-[68px]">
             Upgrade your skills and knowledge
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm  text-slate-500 md:text-base">
+          <p className="mx-auto mt-5 max-w-2xl text-sm text-slate-500 md:text-base">
             Select the right coaching program for your child based on class,
             exam goal and learning need.
           </p>
         </div>
 
-        {/* Cards */}
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {packages.map((item) => {
             const Icon = item.icon;
@@ -115,19 +116,35 @@ export default function PackagesSection() {
                   item.highlight ? "xl:-mt-5" : ""
                 }`}
               >
-                {/* Top */}
                 <div
-                  className={`relative min-h-[180px] overflow-hidden px-7 py-8 text-white ${item.color}`}
+                  className={`relative min-h-45 overflow-hidden px-7 py-8 text-white ${
+                    item.image ? "bg-[#123c62]" : item.color
+                  }`}
                 >
-                  <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-white/15" />
-                  <div className="absolute -bottom-16 right-6 h-40 w-40 rounded-[45px] bg-white/15 rotate-12" />
+                  {item.image ? (
+                    <>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#071f36]/90 via-[#123c62]/45 to-black/10" />
+                      <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-white/15" />
+                    </>
+                  ) : (
+                    <>
+                      <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-white/15" />
+                      <div className="absolute -bottom-16 right-6 h-40 w-40 rotate-12 rounded-[45px] bg-white/15" />
 
-                  <div className="relative z-10 mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/18 backdrop-blur-md">
-                    <Icon size={26} />
-                  </div>
+                      <div className="relative z-10 mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/18 backdrop-blur-md">
+                        <Icon size={26} />
+                      </div>
+                    </>
+                  )}
 
-                  <div className="relative z-10">
-                    <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-white/75">
+                  <div className="relative z-10 mt-20">
+                    <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-white/80">
                       {item.tag}
                     </p>
 
@@ -137,7 +154,6 @@ export default function PackagesSection() {
                   </div>
                 </div>
 
-                {/* Body */}
                 <div className="p-7">
                   <h4 className="mb-5 text-lg font-extrabold text-[#123c62]">
                     Features
@@ -156,7 +172,6 @@ export default function PackagesSection() {
                   </div>
 
                   <div className="mt-8">
-                   
                     <p className="mt-2 text-2xl font-extrabold text-[#123c62]">
                       {item.price}
                     </p>
