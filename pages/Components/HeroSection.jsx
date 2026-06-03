@@ -108,12 +108,13 @@ export default function HeroSection() {
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-4">
                   {studentAvatars.map((student, index) => (
-                    <img
+                    <Image
                       key={index}
                       src={student.src}
                       alt={student.alt}
-                      loading="lazy"
-                      referrerPolicy="no-referrer"
+                      width={48}
+                      height={48}
+                      unoptimized
                       className="h-12 w-12 rounded-full border-[3px] border-white object-cover shadow-[0_10px_25px_rgba(0,0,0,0.18)] transition duration-300 hover:z-10 hover:scale-110"
                     />
                   ))}
@@ -149,9 +150,9 @@ export default function HeroSection() {
               <p className="text-3xl font-bold">100+</p>
             </div>
 
-            <div className="relative z-10 h-155 w-117.5">
+            <div className="relative z-10 h-175 w-170">
               <Image
-                src="/student.png"
+                src="/j.png"
                 alt="Jeelan's Knowledge Hub Student"
                 fill
                 priority

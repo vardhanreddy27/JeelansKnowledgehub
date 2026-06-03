@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaStar, FaQuoteRight, FaBookOpen } from "react-icons/fa";
 
 const testimonials = [
@@ -94,11 +95,12 @@ export default function TestimonialsSection() {
 
                 <div className="mt-7 flex items-center gap-4">
                   <div className="rounded-full border-2 border-dashed border-[#ffb21a] p-1">
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.name}
-                      loading="lazy"
-                      referrerPolicy="no-referrer"
+                      width={64}
+                      height={64}
+                      unoptimized
                       className="h-16 w-16 rounded-full object-cover"
                     />
                   </div>

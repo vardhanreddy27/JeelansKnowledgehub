@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   FaCheckCircle,
@@ -123,11 +124,12 @@ export default function PackagesSection() {
                 >
                   {item.image ? (
                     <>
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.title}
+                        fill
+                        unoptimized
                         className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#071f36]/90 via-[#123c62]/45 to-black/10" />
                       <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-white/15" />
