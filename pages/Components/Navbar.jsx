@@ -12,7 +12,7 @@ const navItems = [
   { name: "Home Tuitions", href: "#choose-program" },
 ];
 
-const phoneNumber = "919999999999"; // replace with your number
+const phoneNumber = "919494403103";
 
 const whatsappMessage =
   "Hi Jeelan's Knowledge Hub, I want to know about NEET, IIT, Navodaya Coaching, Sainik Schools Entrance, RMS Entrance, and Home Tuitions. Please share batch details and fees.";

@@ -8,7 +8,7 @@ import {
   FaBookOpen,
 } from "react-icons/fa";
 
-const phoneNumber = "919999999999";
+const phoneNumber = "919494403103";
 
 const whatsappMessage =
   "Hi Dr. Jeelan's Knowledge Hub, I want to know about coaching programs, batches, fees and admission details.";

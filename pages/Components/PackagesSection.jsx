@@ -10,7 +10,7 @@ import {
   FaHome,
 } from "react-icons/fa";
 
-const phoneNumber = "919999999999";
+const phoneNumber = "919494403103";
 
 const whatsappMessage =
   "Hi Dr. Jeelan's Knowledge Hub, I want to know about IIT, NEET, Advanced Learning and Home Tuition packages.";

@@ -9,8 +9,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
-const phoneNumber = "918520074907";
-const secondPhoneNumber = "919494403103";
+const phoneNumber = "919494403103";
 
 const whatsappMessage =
   "Hi Dr. Jeelan's Knowledge Hub, I want to know about coaching details, batches and admission process.";
@@ -65,7 +64,7 @@ export default function ContactSection() {
                   Phone Number:
                 </h3>
                 <p className="mt-1 text-sm font-medium text-slate-500">
-                  +91 85200 74907 / +91 94944 03103
+                  +91 94944 03103
                 </p>
               </div>
             </div>

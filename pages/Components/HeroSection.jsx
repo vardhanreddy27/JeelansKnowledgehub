@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 
-const phoneNumber = "919999999999";
+const phoneNumber = "919494403103";
 
 const whatsappMessage =
   "Hi Jeelan's Knowledge Hub, I want to know about NEET, IIT Foundation, Navodaya, Sainik School Entrance, RMS Entrance and Home Tuitions. Please share batch details.";
