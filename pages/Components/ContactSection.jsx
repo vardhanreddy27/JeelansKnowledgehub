@@ -64,7 +64,7 @@ export default function ContactSection() {
                   Phone Number:
                 </h3>
                 <p className="mt-1 text-sm font-medium text-slate-500">
-                  +91 94944 03103
+                  +91 8520074907
                 </p>
               </div>
             </div>

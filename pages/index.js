@@ -15,7 +15,6 @@ function index() {
 
 <Navbar />
 <HeroSection />
-
 <WhatWeDoSection />
 <EnrollmentCTA /> 
 <PackagesSection />

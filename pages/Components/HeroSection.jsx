@@ -152,7 +152,7 @@ export default function HeroSection() {
 
             <div className="relative z-10 h-175 w-170">
               <Image
-                src="/j.png"
+                src="/j.webp"
                 alt="Jeelan's Knowledge Hub Student"
                 fill
                 priority

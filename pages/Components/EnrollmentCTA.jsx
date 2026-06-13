@@ -37,7 +37,7 @@ export default function EnrollmentCTA() {
               <div className="absolute bottom-0 h-[390px] w-[390px] rounded-full bg-white/12" />
 
               <Image
-                src="/jeelan.png"
+                src="/j.webp"
                 alt="Dr. Jeelan's Knowledge Hub Student"
                 width={520}
                 height={620}
