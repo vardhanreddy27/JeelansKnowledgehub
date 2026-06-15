@@ -146,10 +146,19 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* Map link avoids loading a third-party iframe on the homepage. */}
+        {/* The map is lazy-loaded so it does not block the initial page render. */}
         <div className="overflow-hidden rounded-[34px] bg-white p-3 shadow-[0_30px_90px_rgba(15,23,42,0.12)]">
-          <div className="map-card relative flex min-h-[420px] items-end overflow-hidden rounded-[26px] bg-[#dcecf8] p-5 md:min-h-[520px]">
-            <div className="w-full rounded-2xl bg-white/95 p-5 shadow-[0_15px_40px_rgba(15,23,42,0.16)] backdrop-blur-md">
+          <div className="relative h-[420px] overflow-hidden rounded-[26px] md:h-[520px]">
+            <iframe
+              title="Dr. Jeelan's Knowledge Hub location in Kadapa"
+              src="https://www.google.com/maps?q=42%2F212-7%2C%20N.G.O.%20Colony%2C%20Kadapa&output=embed"
+              className="h-full w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+
+            <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-white/95 p-4 shadow-[0_15px_40px_rgba(15,23,42,0.16)] backdrop-blur-md">
               <h3 className="text-base font-extrabold text-[#123c62]">
                 Dr. Jeelan&apos;s Knowledge Hub
               </h3>

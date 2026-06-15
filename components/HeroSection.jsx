@@ -17,19 +17,19 @@ const whatsappLink = createWhatsAppLink(whatsappMessage);
 
 const studentAvatars = [
   {
-    src: "/jeelan.webp",
+    src: "https://img.freepik.com/premium-photo/smiling-young-indian-student-with-books-backpack_53876-1255622.jpg?semt=ais_hybrid&w=740&q=80",
     alt: "Student one",
   },
   {
-    src: "/j.webp",
+    src: "https://plus.unsplash.com/premium_photo-1682089892133-556bde898f2c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwc3R1ZGVudHN8ZW58MHx8MHx8fDA%3D",
     alt: "Student two",
   },
   {
-    src: "/jeelan.png",
+    src: "https://t4.ftcdn.net/jpg/05/52/94/91/360_F_552949155_Dp8LkuLQflQIGQ9Fs6GukKVSdGRTiD5i.jpg",
     alt: "Student three",
   },
   {
-    src: "/jeelans.png",
+    src: "https://i.pinimg.com/originals/8c/11/dd/8c11dd4a7110a437722370c4663f80ec.jpg",
     alt: "Student four",
   },
 ];
@@ -112,6 +112,7 @@ export default function HeroSection() {
                       alt={student.alt}
                       width={48}
                       height={48}
+                      unoptimized
                       className="h-12 w-12 rounded-full border-[3px] border-white object-cover shadow-[0_10px_25px_rgba(0,0,0,0.18)] transition duration-300 hover:z-10 hover:scale-110"
                     />
                   ))}

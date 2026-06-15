@@ -5,25 +5,29 @@ const testimonials = [
   {
     name: "Akhila Reddy",
     role: "IIT Foundation Student",
-    image: "/jeelan.webp",
+    image:
+      "https://img.freepik.com/premium-photo/smiling-young-indian-student-with-books-backpack_53876-1255622.jpg?semt=ais_hybrid&w=740&q=80",
     text: "The classes helped me understand Maths and Science basics clearly. Weekly tests improved my confidence and preparation.",
   },
   {
     name: "Rohan Varma",
     role: "NEET Student",
-    image: "/j.webp",
+    image:
+      "https://plus.unsplash.com/premium_photo-1682089892133-556bde898f2c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwc3R1ZGVudHN8ZW58MHx8MHx8fDA%3D",
     text: "Biology, Physics and Chemistry concepts are explained in a simple way. Doubt clearing and revision support are very useful.",
   },
   {
     name: "Sameera Khan",
     role: "Advanced Learning",
-    image: "/jeelan.png",
+    image:
+      "https://t4.ftcdn.net/jpg/05/52/94/91/360_F_552949155_Dp8LkuLQflQIGQ9Fs6GukKVSdGRTiD5i.jpg",
     text: "My Maths basics improved a lot. The learning style is simple, friendly and easy for kids to understand.",
   },
   {
     name: "Meghana Sri",
     role: "Home Tuition Student",
-    image: "/jeelans.png",
+    image:
+      "https://i.pinimg.com/originals/8c/11/dd/8c11dd4a7110a437722370c4663f80ec.jpg",
     text: "Personal attention helped me complete homework, prepare for exams and understand difficult topics better.",
   },
 ];
@@ -90,6 +94,7 @@ export default function TestimonialsSection() {
                       alt={item.name}
                       width={64}
                       height={64}
+                      unoptimized
                       className="h-16 w-16 rounded-full object-cover"
                     />
                   </div>
