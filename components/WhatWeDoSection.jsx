@@ -21,11 +21,11 @@ export default function WhatWeDoSection() {
               Provided with experience, care,
             </span>
 
-            <span className="mt-1 flex items-baseline justify-center gap-4">
+            <span className="mt-1 flex flex-wrap items-baseline justify-center gap-x-4">
               <span className="shrink-0">thought and</span>
 
               {/* Fixed width box: only this word moves */}
-              <span className="inline-block w-[220px] text-left text-[#ffb21a] md:w-[340px] lg:w-[390px]">
+              <span className="inline-block min-w-[190px] text-left text-[#ffb21a] md:min-w-[340px] lg:min-w-[390px]">
                 <Typewriter
                   words={["results", "confidence", "discipline", "guidance"]}
                   loop={0}

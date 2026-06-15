@@ -7,15 +7,12 @@ import {
   FaUserGraduate,
   FaBookOpen,
 } from "react-icons/fa";
-
-const phoneNumber = "919494403103";
+import { PHONE_E164, createWhatsAppLink } from "@/lib/site";
 
 const whatsappMessage =
   "Hi Dr. Jeelan's Knowledge Hub, I want to know about coaching programs, batches, fees and admission details.";
 
-const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-  whatsappMessage
-)}`;
+const whatsappLink = createWhatsAppLink(whatsappMessage);
 
 export default function EnrollmentCTA() {
   return (
@@ -41,7 +38,6 @@ export default function EnrollmentCTA() {
                 alt="Dr. Jeelan's Knowledge Hub Student"
                 width={520}
                 height={620}
-                priority
                 className="relative z-10 max-h-[560px] w-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.28)]"
               />
 
@@ -98,8 +94,8 @@ export default function EnrollmentCTA() {
 
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link
-                  href={`tel:+${phoneNumber}`}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#ffb21a] px-8 py-4 text-sm font-extrabold text-white shadow-[0_18px_35px_rgba(255,178,26,0.35)] transition hover:-translate-y-1"
+                  href={`tel:${PHONE_E164}`}
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#ffb21a] px-8 py-4 text-sm font-extrabold text-white shadow-[0_18px_35px_rgba(255,178,26,0.35)] transition hover:-translate-y-1"
                 >
                   <FaPhoneAlt size={14} />
                   Call Now
@@ -109,7 +105,7 @@ export default function EnrollmentCTA() {
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-4 text-sm font-extrabold text-white shadow-[0_18px_35px_rgba(37,211,102,0.28)] transition hover:-translate-y-1"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#25D366] px-8 py-4 text-sm font-extrabold text-white shadow-[0_18px_35px_rgba(37,211,102,0.28)] transition hover:-translate-y-1"
                 >
                   <FaWhatsapp size={18} />
                   WhatsApp Us

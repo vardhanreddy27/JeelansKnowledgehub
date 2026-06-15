@@ -2,24 +2,21 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaBars, FaTimes, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
+import { PHONE_E164, createWhatsAppLink } from "@/lib/site";
 
 const navItems = [
-  { name: "NEET", href: "#choose-program", badge: "New Batch" },
-  { name: "IIT", href: "#choose-program", badge: "New Batch" },
-  { name: "Navodaya Coaching", href: "#choose-program" },
-  { name: "Sainik Schools Entrance", href: "#choose-program" },
-  { name: "RMS Entrance", href: "#choose-program" },
-  { name: "Home Tuitions", href: "#choose-program" },
+  { name: "NEET", href: "/neet", badge: "New Batch" },
+  { name: "IIT", href: "/iit-foundation", badge: "New Batch" },
+  { name: "Navodaya", href: "/navodaya-coaching" },
+  { name: "Sainik School", href: "/sainik-school-entrance" },
+  { name: "RMS", href: "/rms-entrance" },
+  { name: "Home Tuitions", href: "/home-tuitions" },
 ];
-
-const phoneNumber = "919494403103";
 
 const whatsappMessage =
   "Hi Jeelan's Knowledge Hub, I want to know about NEET, IIT, Navodaya Coaching, Sainik Schools Entrance, RMS Entrance, and Home Tuitions. Please share batch details and fees.";
 
-const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-  whatsappMessage
-)}`;
+const whatsappLink = createWhatsAppLink(whatsappMessage);
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -47,7 +44,6 @@ export default function Navbar() {
             alt="Jeelan's Knowledge Hub"
             width={230}
             height={80}
-            priority
             className="h-15.5 w-auto object-contain md:h-17.5"
           />
         </Link>
@@ -55,10 +51,10 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden items-center gap-3 xl:flex">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
-              className={`group flex items-center gap-2 rounded-full px-4 py-2 text-[15px] font-semibold transition ${
+              className={`group flex min-h-11 items-center gap-2 rounded-full px-4 py-2 text-[15px] font-semibold transition ${
                 item.badge
                   ? "bg-[#fff8e8]/90 text-[#1f67a8] ring-1 ring-[#ffb21a]/35 hover:bg-[#fff1cc]"
                   : scrolled
@@ -74,15 +70,15 @@ export default function Navbar() {
                   {item.badge}
                 </span>
               )}
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* Right Buttons */}
         <div className="hidden shrink-0 items-center gap-3 xl:flex">
           <Link
-            href={`tel:+${phoneNumber}`}
-            className="flex items-center gap-2 rounded-full bg-[#1f67a8] px-6 py-3 text-[15px] font-semibold text-white shadow-[0_10px_25px_rgba(31,103,168,0.28)] transition hover:bg-[#17558c]"
+            href={`tel:${PHONE_E164}`}
+            className="flex min-h-11 items-center gap-2 rounded-full bg-[#1f67a8] px-6 py-3 text-[15px] font-semibold text-white shadow-[0_10px_25px_rgba(31,103,168,0.28)] transition hover:bg-[#17558c]"
           >
             <FaPhoneAlt size={13} />
             Call
@@ -92,7 +88,7 @@ export default function Navbar() {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-[15px] font-semibold text-white shadow-[0_10px_25px_rgba(37,211,102,0.35)] transition hover:scale-105 hover:bg-[#1ebe5d]"
+            className="flex min-h-11 items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-[15px] font-semibold text-white shadow-[0_10px_25px_rgba(37,211,102,0.35)] transition hover:scale-105 hover:bg-[#1ebe5d]"
             aria-label="WhatsApp Admission Enquiry"
           >
             <FaWhatsapp size={20} />
@@ -119,7 +115,7 @@ export default function Navbar() {
       >
         <div className="space-y-2 px-5 py-5">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               onClick={() => setOpen(false)}
@@ -137,12 +133,12 @@ export default function Navbar() {
                   {item.badge}
                 </span>
               )}
-            </a>
+            </Link>
           ))}
 
           <div className="mt-4 grid grid-cols-2 gap-3">
             <Link
-              href={`tel:+${phoneNumber}`}
+              href={`tel:${PHONE_E164}`}
               onClick={() => setOpen(false)}
               className="flex items-center justify-center gap-2 rounded-full bg-[#1f67a8] px-5 py-3 text-center text-sm font-semibold text-white"
             >

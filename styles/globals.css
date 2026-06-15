@@ -6,4 +6,40 @@
 
 body {
 	font-family: var(--font-sans);
+	overflow-x: hidden;
+}
+
+a,
+button {
+	touch-action: manipulation;
+}
+
+.map-card {
+	background-image:
+		linear-gradient(rgba(31, 103, 168, 0.08) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(31, 103, 168, 0.08) 1px, transparent 1px);
+	background-size: 32px 32px;
+}
+
+.testimonial-track {
+	animation: testimonialMove 55s linear infinite;
+}
+
+.testimonial-track:hover {
+	animation-play-state: paused;
+}
+
+@keyframes testimonialMove {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.testimonial-track {
+		animation: none;
+	}
 }

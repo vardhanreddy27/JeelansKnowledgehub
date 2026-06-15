@@ -1,65 +1,13 @@
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
-
-const faqs = [
-  {
-    question: "Which courses are available at Dr. Jeelan’s Knowledge Hub?",
-    answer:
-      "We provide coaching for NEET, IIT Foundation, Advanced Learning for Classes 1 to 5, Navodaya Coaching, Sainik School Entrance, RMS Entrance and Home Tuitions.",
-  },
-  {
-    question: "What is IIT Foundation coaching?",
-    answer:
-      "IIT Foundation helps students from Classes 6 to 10 build strong Maths and Science basics, logical thinking, problem-solving skills and exam confidence from an early stage.",
-  },
-  {
-    question: "Do you provide NEET coaching in Kadapa?",
-    answer:
-      "Yes. We provide NEET coaching with focus on Biology, Physics and Chemistry, regular tests, revision planning, doubt clearing and personal guidance.",
-  },
-  {
-    question: "What is Advanced Learning for kids?",
-    answer:
-      "Advanced Learning is designed for Classes 1 to 5. It focuses mainly on Maths basics such as numbers, addition, subtraction, multiplication, division, tables and activity-based learning.",
-  },
-  {
-    question: "Do you provide Home Tuitions?",
-    answer:
-      "Yes. Home Tuitions are available for students who need personal attention, school syllabus support, homework guidance and exam preparation.",
-  },
-  {
-    question: "Are weekly tests conducted?",
-    answer:
-      "Yes. Weekly tests and practice sessions are conducted to track student progress, improve confidence and identify areas where extra support is needed.",
-  },
-  {
-    question: "Is personal doubt clearing available?",
-    answer:
-      "Yes. Students get doubt clearing support so they can understand concepts clearly instead of memorizing without clarity.",
-  },
-  {
-    question: "Which classes can join Advanced Learning?",
-    answer:
-      "Advanced Learning is mainly for Classes 1 to 5, especially for students who need stronger Maths basics and better learning confidence.",
-  },
-  {
-    question: "How can I know the fee details?",
-    answer:
-      "Fee details depend on the course, class and learning requirement. You can call or WhatsApp us to get the correct fee details.",
-  },
-  {
-    question: "How can I join a new batch?",
-    answer:
-      "You can contact us through call or WhatsApp. Our team will share batch timings, course details and admission guidance.",
-  },
-];
+import { FAQS } from "@/lib/site";
 
 export default function FAQSection() {
-  // Two FAQs open by default: first left and first right
-  const [openIndexes, setOpenIndexes] = useState([0, 5]);
-
-  const leftFaqs = faqs.slice(0, 5);
-  const rightFaqs = faqs.slice(5);
+  const midpoint = Math.ceil(FAQS.length / 2);
+  // Keep the first question in each column open initially.
+  const [openIndexes, setOpenIndexes] = useState([0, midpoint]);
+  const leftFaqs = FAQS.slice(0, midpoint);
+  const rightFaqs = FAQS.slice(midpoint);
 
   const handleToggle = (actualIndex) => {
     setOpenIndexes((prev) => {
@@ -140,7 +88,7 @@ export default function FAQSection() {
 
         <div className="grid gap-5 lg:grid-cols-2">
           <div className="space-y-4">{renderFaq(leftFaqs, 0)}</div>
-          <div className="space-y-4">{renderFaq(rightFaqs, 5)}</div>
+          <div className="space-y-4">{renderFaq(rightFaqs, midpoint)}</div>
         </div>
       </div>
     </section>

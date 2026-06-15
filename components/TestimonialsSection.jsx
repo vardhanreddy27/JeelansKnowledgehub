@@ -5,29 +5,25 @@ const testimonials = [
   {
     name: "Akhila Reddy",
     role: "IIT Foundation Student",
-    image:
-      "https://img.freepik.com/premium-photo/smiling-young-indian-student-with-books-backpack_53876-1255622.jpg?semt=ais_hybrid&w=740&q=80",
+    image: "/jeelan.webp",
     text: "The classes helped me understand Maths and Science basics clearly. Weekly tests improved my confidence and preparation.",
   },
   {
     name: "Rohan Varma",
     role: "NEET Student",
-    image:
-      "https://plus.unsplash.com/premium_photo-1682089892133-556bde898f2c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwc3R1ZGVudHN8ZW58MHx8MHx8fDA%3D",
+    image: "/j.webp",
     text: "Biology, Physics and Chemistry concepts are explained in a simple way. Doubt clearing and revision support are very useful.",
   },
   {
     name: "Sameera Khan",
     role: "Advanced Learning",
-    image:
-      "https://t4.ftcdn.net/jpg/05/52/94/91/360_F_552949155_Dp8LkuLQflQIGQ9Fs6GukKVSdGRTiD5i.jpg",
+    image: "/jeelan.png",
     text: "My Maths basics improved a lot. The learning style is simple, friendly and easy for kids to understand.",
   },
   {
     name: "Meghana Sri",
     role: "Home Tuition Student",
-    image:
-      "https://i.pinimg.com/originals/8c/11/dd/8c11dd4a7110a437722370c4663f80ec.jpg",
+    image: "/jeelans.png",
     text: "Personal attention helped me complete homework, prepare for exams and understand difficult topics better.",
   },
 ];
@@ -36,13 +32,7 @@ const movingTestimonials = [...testimonials, ...testimonials];
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative overflow-hidden bg-[#123c62] px-4 py-20 md:px-8 lg:py-28">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-25"
-        style={{
-          backgroundImage: "url('/testimonials-bg.jpg')",
-        }}
-      />
+    <section id="testimonials" className="relative overflow-hidden bg-[#123c62] px-4 py-20 md:px-8 lg:py-28">
 
       <div className="absolute inset-0 bg-[#123c62]/90" />
 
@@ -100,7 +90,6 @@ export default function TestimonialsSection() {
                       alt={item.name}
                       width={64}
                       height={64}
-                      unoptimized
                       className="h-16 w-16 rounded-full object-cover"
                     />
                   </div>
@@ -127,24 +116,6 @@ export default function TestimonialsSection() {
         </div>
       </div>
 
-      <style jsx>{`
-        .testimonial-track {
-          animation: testimonialMove 55s linear infinite;
-        }
-
-        .testimonial-track:hover {
-          animation-play-state: paused;
-        }
-
-        @keyframes testimonialMove {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
     </section>
   );
 }

@@ -8,31 +8,31 @@ import {
   FaPhoneAlt,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-
-const phoneNumber = "919494403103";
+import {
+  SOCIAL_LINKS,
+  createWhatsAppLink,
+} from "@/lib/site";
 
 const whatsappMessage =
   "Hi Dr. Jeelan's Knowledge Hub, I want to know about coaching details, batches and admission process.";
 
-const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-  whatsappMessage
-)}`;
+const whatsappLink = createWhatsAppLink(whatsappMessage);
 
 const quickLinks = [
   { name: "Home", href: "/" },
-  { name: "NEET", href: "#neet" },
-  { name: "IIT Foundation", href: "#iit" },
-  { name: "Advanced Learning", href: "#advanced-learning" },
-  { name: "Contact", href: "#contact" },
+  { name: "NEET", href: "/neet" },
+  { name: "IIT Foundation", href: "/iit-foundation" },
+  { name: "Advanced Learning", href: "/advanced-learning" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const services = [
-  { name: "NEET Coaching", href: "#neet" },
-  { name: "IIT Foundation", href: "#iit" },
-  { name: "Navodaya Coaching", href: "#navodaya" },
-  { name: "Sainik School Entrance", href: "#sainik" },
-  { name: "RMS Entrance", href: "#rms" },
-  { name: "Home Tuitions", href: "#home-tuitions" },
+  { name: "NEET Coaching", href: "/neet" },
+  { name: "IIT Foundation", href: "/iit-foundation" },
+  { name: "Navodaya Coaching", href: "/navodaya-coaching" },
+  { name: "Sainik School Entrance", href: "/sainik-school-entrance" },
+  { name: "RMS Entrance", href: "/rms-entrance" },
+  { name: "Home Tuitions", href: "/home-tuitions" },
 ];
 
 const tags = [
@@ -49,6 +49,8 @@ const tags = [
 ];
 
 export default function Footer() {
+  const socialIcons = [FaFacebookF, FaInstagram, FaYoutube];
+
   return (
     <footer className="relative overflow-hidden bg-[#0f2238] text-white">
       <div className="absolute inset-0 opacity-[0.05]">
@@ -143,30 +145,26 @@ export default function Footer() {
               ))}
             </div>
 
+            <p className="mt-6 text-xs text-white/50">
+              TODO: social profile links are pending verification.
+            </p>
             <div className="mt-7 flex gap-3">
-              <Link
-                href="#"
-                aria-label="Facebook"
-                className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white transition hover:border-[#ffb21a] hover:bg-[#ffb21a] hover:text-[#123c62]"
-              >
-                <FaFacebookF />
-              </Link>
-
-              <Link
-                href="#"
-                aria-label="Instagram"
-                className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white transition hover:border-[#ffb21a] hover:bg-[#ffb21a] hover:text-[#123c62]"
-              >
-                <FaInstagram />
-              </Link>
-
-              <Link
-                href="#"
-                aria-label="YouTube"
-                className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white transition hover:border-[#ffb21a] hover:bg-[#ffb21a] hover:text-[#123c62]"
-              >
-                <FaYoutube />
-              </Link>
+              {SOCIAL_LINKS.map((profile, index) => {
+                const Icon = socialIcons[index];
+                return (
+                  <Link
+                    key={profile.name}
+                    href={profile.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${profile.name} (profile URL to verify)`}
+                    title="TODO: verify this social profile URL"
+                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white transition hover:border-[#ffb21a] hover:bg-[#ffb21a] hover:text-[#123c62]"
+                  >
+                    <Icon />
+                  </Link>
+                );
+              })}
 
               <Link
                 href={whatsappLink}
@@ -186,19 +184,19 @@ export default function Footer() {
       <div className="relative border-t border-white/8 bg-[#132941]">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-5 py-6 md:flex-row md:px-8">
           <div className="flex flex-wrap justify-center gap-5 text-sm font-bold text-white/70 md:justify-start">
-            <Link href="#contact" className="transition hover:text-[#ffb21a]">
+            <Link href="/contact" className="transition hover:text-[#ffb21a]">
               Contact
             </Link>
-            <Link href="#about" className="transition hover:text-[#ffb21a]">
+            <Link href="/#skills-knowledge" className="transition hover:text-[#ffb21a]">
               About
             </Link>
-            <Link href="#services" className="transition hover:text-[#ffb21a]">
+            <Link href="/#choose-program" className="transition hover:text-[#ffb21a]">
               Services
             </Link>
-            <Link href="#testimonials" className="transition hover:text-[#ffb21a]">
+            <Link href="/#testimonials" className="transition hover:text-[#ffb21a]">
               Testimonials
             </Link>
-            <Link href="#packages" className="transition hover:text-[#ffb21a]">
+            <Link href="/#choose-program" className="transition hover:text-[#ffb21a]">
               Programs
             </Link>
           </div>

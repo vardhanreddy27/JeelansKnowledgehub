@@ -8,31 +8,29 @@ import {
   FaGraduationCap,
 } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
-
-const phoneNumber = "919494403103";
+import { PHONE_E164, createWhatsAppLink } from "@/lib/site";
 
 const whatsappMessage =
   "Hi Jeelan's Knowledge Hub, I want to know about NEET, IIT Foundation, Navodaya, Sainik School Entrance, RMS Entrance and Home Tuitions. Please share batch details.";
 
-const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-  whatsappMessage
-)}`;
+const whatsappLink = createWhatsAppLink(whatsappMessage);
 
 const studentAvatars = [
   {
-    src: "https://img.freepik.com/premium-photo/smiling-young-indian-student-with-books-backpack_53876-1255622.jpg?semt=ais_hybrid&w=740&q=80",
+    src: "/jeelan.webp",
     alt: "Student one",
   },
   {
-    src: "https://plus.unsplash.com/premium_photo-1682089892133-556bde898f2c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwc3R1ZGVudHN8ZW58MHx8MHx8fDA%3D",
+    src: "/j.webp",
     alt: "Student two",
   },
   {
-    src: "https://t4.ftcdn.net/jpg/05/52/94/91/360_F_552949155_Dp8LkuLQflQIGQ9Fs6GukKVSdGRTiD5i.jpg",
+    src: "/jeelan.png",
     alt: "Student three",
-  },{
-    src: "https://i.pinimg.com/originals/8c/11/dd/8c11dd4a7110a437722370c4663f80ec.jpg",
-    alt: "Student three",
+  },
+  {
+    src: "/jeelans.png",
+    alt: "Student four",
   },
 ];
 
@@ -40,17 +38,17 @@ const featureCards = [
   {
     title: "IIT Foundation",
     image: "/iit.png",
-    href: "#iit",
+    href: "/iit-foundation",
   },
   {
     title: "NEET Coaching",
     image: "/neet-coaching.png",
-    href: "#neet",
+    href: "/neet",
   },
   {
     title: "Advanced Learning",
     image: "/advanced-learning.png",
-    href: "#advanced-learning",
+    href: "/advanced-learning",
   },
 ];
 
@@ -74,10 +72,10 @@ export default function HeroSection() {
               New batches open for NEET & IIT Foundation
             </div>
 
-            <h1 id="skills-knowledge" className="scroll-mt-28 text-[44px] font-light leading-[1.08] tracking-[-1px] text-white md:text-[68px] lg:text-[86px]">
-              Upgrade your skills
+            <h1 id="skills-knowledge" className="scroll-mt-28 text-[42px] font-light leading-[1.08] tracking-[-1px] text-white md:text-[68px] lg:text-[82px]">
+              NEET, IIT Foundation
               <br />
-              and knowledge
+              & Home Tuition in Kadapa
             </h1>
 
             <p className="mt-7 max-w-155 text-base leading-8 text-white/85 md:text-lg">
@@ -88,8 +86,8 @@ export default function HeroSection() {
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
-                href={`tel:+${phoneNumber}`}
-                className="flex items-center gap-2 font-extrabold shadow-2xl rounded-full bg-[#ffb21a] px-8 py-4 text-sm  text-white  "
+                href={`tel:${PHONE_E164}`}
+                className="flex min-h-11 items-center gap-2 rounded-full bg-[#ffb21a] px-8 py-4 text-sm font-extrabold text-white shadow-2xl"
               >
                 <FaPhoneAlt size={14} />
                 Call Now
@@ -99,7 +97,7 @@ export default function HeroSection() {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 shadow-2xl rounded-full bg-[#25D366] px-8 py-4 text-sm font-extrabold text-white  "
+                className="flex min-h-11 items-center gap-2 rounded-full bg-[#25D366] px-8 py-4 text-sm font-extrabold text-white shadow-2xl"
               >
                 <FaWhatsapp size={22} />
                 WhatsApp
@@ -114,7 +112,6 @@ export default function HeroSection() {
                       alt={student.alt}
                       width={48}
                       height={48}
-                      unoptimized
                       className="h-12 w-12 rounded-full border-[3px] border-white object-cover shadow-[0_10px_25px_rgba(0,0,0,0.18)] transition duration-300 hover:z-10 hover:scale-110"
                     />
                   ))}

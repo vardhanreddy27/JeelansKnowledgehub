@@ -9,15 +9,12 @@ import {
   FaCalculator,
   FaHome,
 } from "react-icons/fa";
-
-const phoneNumber = "919494403103";
+import { PHONE_E164, createWhatsAppLink } from "@/lib/site";
 
 const whatsappMessage =
   "Hi Dr. Jeelan's Knowledge Hub, I want to know about IIT, NEET, Advanced Learning and Home Tuition packages.";
 
-const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-  whatsappMessage
-)}`;
+const whatsappLink = createWhatsAppLink(whatsappMessage);
 
 const packages = [
   {
@@ -25,7 +22,7 @@ const packages = [
     tag: "Classes 1 to 5",
     icon: FaCalculator,
     color: "bg-[#ffb21a]",
-    image:"https://www.shutterstock.com/shutterstock/videos/1092019115/thumb/1.jpg?ip=x480",
+    image: "/advanced-learning.png",
     features: [
       "Basic Maths improvement",
       "Addition, subtraction, tables",
@@ -40,7 +37,7 @@ const packages = [
     tag: "Classes 6 to 12",
     icon: FaBookOpen,
     color: "bg-[#1f67a8]",
-    image:"https://images.shiksha.com/mediadata/images/articles/1682688256phpUghaiy.jpeg",
+    image: "/iit.png",
     features: [
       "Maths & Science foundation",
       "Concept clarity from basics",
@@ -55,8 +52,7 @@ const packages = [
     tag: "Medical Entrance",
     icon: FaFlask,
     color: "bg-[#123c62]",
-    image:
-      "https://media.istockphoto.com/id/2163915959/photo/indian-asian-young-doctors-or-medical-professionals-isolated-or-in-office-hospital.jpg?s=612x612&w=0&k=20&c=Ew-pDn43ubKoHYwUn5p2x2ElZRCX3N1elPGRMNSc1qU=",
+    image: "/neet-coaching.png",
     features: [
       "Biology, Physics & Chemistry",
       "Chapter-wise preparation",
@@ -72,7 +68,7 @@ const packages = [
     tag: "Personal Coaching",
     icon: FaHome,
     color: "bg-[#2c84c4]",
-    image:"https://content3.jdmagicbox.com/v2/comp/jaipur/u6/0141px141.x141.230210093520.v1u6/catalogue/click-home-tuition-ramnagar-extension-jaipur-home-tutors-m89qrezwp9.jpg",
+    image: "/jeelan.webp",
     features: [
       "One-to-one attention",
       "School syllabus support",
@@ -128,8 +124,8 @@ export default function PackagesSection() {
                         src={item.image}
                         alt={item.title}
                         fill
-                        unoptimized
                         className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#071f36]/90 via-[#123c62]/45 to-black/10" />
                       <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-white/15" />
@@ -181,8 +177,8 @@ export default function PackagesSection() {
 
                   <div className="mt-7 grid grid-cols-2 gap-3">
                     <Link
-                      href={`tel:+${phoneNumber}`}
-                      className="flex items-center justify-center gap-2 rounded-full bg-[#ffb21a] px-4 py-3 text-xs font-extrabold text-white transition hover:bg-[#f5a400]"
+                      href={`tel:${PHONE_E164}`}
+                      className="flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#ffb21a] px-4 py-3 text-xs font-extrabold text-white transition hover:bg-[#f5a400]"
                     >
                       <FaPhoneAlt size={12} />
                       Call
@@ -192,7 +188,7 @@ export default function PackagesSection() {
                       href={whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-xs font-extrabold text-white transition hover:bg-[#1fbd59]"
+                      className="flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-xs font-extrabold text-white transition hover:bg-[#1fbd59]"
                     >
                       <FaWhatsapp size={15} />
                       WhatsApp

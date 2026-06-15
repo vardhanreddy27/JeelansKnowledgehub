@@ -8,15 +8,19 @@ import {
   FaInstagram,
   FaYoutube,
 } from "react-icons/fa";
-
-const phoneNumber = "919494403103";
+import {
+  PHONE_E164,
+  SOCIAL_LINKS,
+  createWhatsAppLink,
+} from "@/lib/site";
 
 const whatsappMessage =
   "Hi Dr. Jeelan's Knowledge Hub, I want to know about coaching details, batches and admission process.";
 
-const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-  whatsappMessage
-)}`;
+const whatsappLink = createWhatsAppLink(whatsappMessage);
+const mapsUrl =
+  "https://www.google.com/maps/search/?api=1&query=42%2F212-7%2C%20N.G.O.%20Colony%2C%20Kadapa";
+const socialIcons = [FaFacebookF, FaInstagram, FaYoutube];
 
 export default function ContactSection() {
   return (
@@ -50,7 +54,7 @@ export default function ContactSection() {
                   Email Address:
                 </h3>
                 <p className="mt-1 text-sm font-medium text-slate-500">
-                  drjeelansknowledgehub@gmail.com
+                  drjeelansknowledgehub [at] gmail [dot] com
                 </p>
               </div>
             </div>
@@ -86,8 +90,8 @@ export default function ContactSection() {
 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href={`tel:+${phoneNumber}`}
-              className="inline-flex items-center gap-2 rounded-full bg-[#ffb21a] px-7 py-4 text-sm font-extrabold text-white shadow-[0_15px_35px_rgba(255,178,26,0.3)] "
+              href={`tel:${PHONE_E164}`}
+              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#ffb21a] px-7 py-4 text-sm font-extrabold text-white shadow-[0_15px_35px_rgba(255,178,26,0.3)]"
             >
               <FaPhoneAlt size={14} />
               Call Now
@@ -97,7 +101,7 @@ export default function ContactSection() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-7 py-4 text-sm font-extrabold text-white shadow-[0_15px_35px_rgba(37,211,102,0.25)]"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#25D366] px-7 py-4 text-sm font-extrabold text-white shadow-[0_15px_35px_rgba(37,211,102,0.25)]"
             >
               <FaWhatsapp size={18} />
               WhatsApp
@@ -108,28 +112,27 @@ export default function ContactSection() {
             <h3 className="mb-4 text-sm font-extrabold text-[#123c62]">
               Follow us on social media:
             </h3>
+            <p className="mb-3 text-xs text-slate-500">
+              TODO: profile links are placeholders pending verification.
+            </p>
 
             <div className="flex gap-3">
-              <Link
-                href="#"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1f67a8] text-white    "
-              >
-                <FaFacebookF />
-              </Link>
-
-              <Link
-                href="#"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-[#ffb21a] text-white    "
-              >
-                <FaInstagram />
-              </Link>
-
-              <Link
-                href="#"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-red-600 text-white    "
-              >
-                <FaYoutube />
-              </Link>
+              {SOCIAL_LINKS.map((profile, index) => {
+                const Icon = socialIcons[index];
+                return (
+                  <Link
+                    key={profile.name}
+                    href={profile.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${profile.name} (profile URL to verify)`}
+                    title="TODO: verify this social profile URL"
+                    className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1f67a8] text-white"
+                  >
+                    <Icon />
+                  </Link>
+                );
+              })}
 
               <Link
                 href={whatsappLink}
@@ -143,19 +146,10 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* RIGHT MAP */}
+        {/* Map link avoids loading a third-party iframe on the homepage. */}
         <div className="overflow-hidden rounded-[34px] bg-white p-3 shadow-[0_30px_90px_rgba(15,23,42,0.12)]">
-          <div className="relative h-[420px] overflow-hidden rounded-[26px] md:h-[520px]">
-            <iframe
-              title="Dr. Jeelan's Knowledge Hub Location"
-              src="https://www.google.com/maps?q=42%2F212-7%2C%20N.G.O.%20Colony%2C%20Kadapa&output=embed"
-              className="h-full w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-
-            <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-white/95 p-4 shadow-[0_15px_40px_rgba(15,23,42,0.16)] backdrop-blur-md">
+          <div className="map-card relative flex min-h-[420px] items-end overflow-hidden rounded-[26px] bg-[#dcecf8] p-5 md:min-h-[520px]">
+            <div className="w-full rounded-2xl bg-white/95 p-5 shadow-[0_15px_40px_rgba(15,23,42,0.16)] backdrop-blur-md">
               <h3 className="text-base font-extrabold text-[#123c62]">
                 Dr. Jeelan&apos;s Knowledge Hub
               </h3>
@@ -164,10 +158,10 @@ export default function ContactSection() {
               </p>
 
               <Link
-                href="https://www.google.com/maps/search/?api=1&query=42%2F212-7%2C%20N.G.O.%20Colony%2C%20Kadapa"
+                href={mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 inline-flex rounded-full bg-[#1f67a8] px-5 py-2 text-xs font-extrabold text-white transition hover:bg-[#123c62]"
+                className="mt-3 inline-flex min-h-11 items-center rounded-full bg-[#1f67a8] px-5 py-2 text-xs font-extrabold text-white transition hover:bg-[#123c62]"
               >
                 Open in Google Maps
               </Link>
