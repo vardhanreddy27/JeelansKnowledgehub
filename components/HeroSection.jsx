@@ -63,7 +63,7 @@ export default function HeroSection() {
       <div className="relative z-10 flex min-h-screen flex-col px-5 pb-14 pt-10 md:px-10 lg:px-16 lg:pt-14">
         <div className="grid flex-1 items-center gap-10 lg:grid-cols-[1fr_0.95fr]">
           {/* LEFT CONTENT */}
-          <div className="">
+          <div className="order-2 lg:order-1">
             <div className="mb-8 inline-flex items-center gap-3 rounded-full bg-white/15 px-5 py-3 text-sm font-bold text-[#ffe082] backdrop-blur-md">
               <span className="relative flex h-3 w-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ffb21a] opacity-75" />
@@ -131,7 +131,7 @@ export default function HeroSection() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="relative flex min-h-100 items-end justify-center sm:min-h-120 lg:min-h-145">
+          <div className="relative order-1 flex min-h-100 items-end justify-center sm:min-h-120 lg:order-2 lg:min-h-145">
             <div className="absolute right-4 top-20 z-20 rounded-[22px] border border-white/20 bg-white/12 px-6 py-5 text-white backdrop-blur-md">
               <div className="mb-2 flex items-center gap-2 text-white/80">
                 <FaUsers className="text-[#ffb21a]" />
