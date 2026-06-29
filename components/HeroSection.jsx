@@ -131,7 +131,7 @@ export default function HeroSection() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="relative hidden min-h-145 items-end justify-center lg:flex">
+          <div className="relative flex min-h-100 items-end justify-center sm:min-h-120 lg:min-h-145">
             <div className="absolute right-4 top-20 z-20 rounded-[22px] border border-white/20 bg-white/12 px-6 py-5 text-white backdrop-blur-md">
               <div className="mb-2 flex items-center gap-2 text-white/80">
                 <FaUsers className="text-[#ffb21a]" />
@@ -148,13 +148,14 @@ export default function HeroSection() {
               <p className="text-3xl font-bold">100+</p>
             </div>
 
-            <div className="relative z-10 h-175 w-170">
+            <div className="relative z-10 h-115 w-full sm:h-140 lg:h-175 lg:w-170">
               <Image
                 src="/j.webp"
                 alt="Jeelan's Knowledge Hub Student"
                 fill
                 priority
                 className="object-contain object-bottom drop-shadow-[0_25px_40px_rgba(0,0,0,0.28)]"
+                sizes="(max-width: 1023px) 100vw, 680px"
               />
             </div>
           </div>
